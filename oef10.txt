@@ -1,0 +1,24 @@
+#Geef de naam en lengte van het kleinste gen in het genoom
+mysql> SELECT gene_name, (seq_region_end - seq_region_start) as length  FROM gene ORDER BY length ASC LIMIT 1;
++-----------+--------+
+| gene_name | length |
++-----------+--------+
+| TRDD1     |      7 |
+
+
+#Geef de naam van het gen met het op een na meeste transcripten? Wat is het aantal transcripten?
+mysql> SELECT count(transcript_id) as amount, gene_name FROM gene JOIN transcript ON gene.gene_id = transcript.gene_id GROUP BY gene_name  ORDER BY amount DESC LIMIT 1 OFFSET 1;
++--------+-----------+
+| amount | gene_name |
++--------+-----------+
+|    813 | Y_RNA     |
+
+
+#Geef de naam van het chromosoom dat het op een na meeste genen bevat die iets vertellen over kanker. Geef het aantal exonen van dit chromosoom. 
+mysql> SELECT chromosome, COUNT(gene_id) as amount FROM gene WHERE description like "%cancer%" GROUP BY  chromosome ORDER BY amount DESC LIMIT 1 OFFSET 1;
++------------+--------+
+| chromosome | amount |
++------------+--------+
+| 9          |      5 |
+
+
