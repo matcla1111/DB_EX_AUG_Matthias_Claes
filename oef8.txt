@@ -1,0 +1,25 @@
+#UNF 
+DB(PatientNumber, PatientNaam, Geboortedatum, Adres, Voorschriftnummer, Medicijn, Dosering, DokterNummer, Dokter, Assistente)
+
+#1NF
+Patient(PatientNumber(PK), PatientNaam, Geboortedatum, Adres)
+Voorschrift(Voorschriftnummer(PK), Medicijn, Dosering)
+Dokter(DokterNummer(PK), Dokter)
+Assistente(AssistenteID (PK), Assistent)
+
+#2NF 
+Patient(PatientNumber(PK), PatientNaam, Geboortedatum, Adres)
+Voorschrift(Voorschriftnummer(PK), Medicijn, Dosering)
+Dokter(DokterNummer(PK), Dokter)
+Assistente(AssistenteID (PK), Assistent)
+
+#3NF 
+Patient(PatientNumber(PK), PatientNaam, Geboortedatum, Adres, DokterNummer(FK), AssistentID(FK))
+Voorschrift(Voorschriftnummer(PK), Medicijn)
+Dokter(DokterNummer(PK), Dokter)
+Dosering(Dosering, Voorschriftnummer(FK), PatientNumber(FK))
+Assistente(AssistenteID (PK), Assistent)
+
+
+
+
