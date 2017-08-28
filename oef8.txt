@@ -1,3 +1,5 @@
+#Normaliseer tot 3NF
+
 #UNF 
 DB(PatientNumber, PatientNaam, Geboortedatum, Adres, Voorschriftnummer, Medicijn, Dosering, DokterNummer, Dokter, Assistente)
 
