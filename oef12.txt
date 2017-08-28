@@ -1,0 +1,14 @@
+#Geef de mapping locatie van variant rs422482 in de muis
+ensebml.org --> Search: Mouse For: rs4224828 --> Location: Chromosome 4:136443949 (forward strand)|VCF:4  136443949  rs4224828  T  C
+
+Resultaat:
+Location: Chromosome 4:136443949 (forward strand)|VCF:4  136443949  rs4224828  T  C
+
+#Geef de eerste 100 basen van de genomische FASTA-sequentie van notch1 gen in de muis
+ensebml.org --> Search: Mouse For: Notch1 --> Chromosome 2: 26,457,903-26,516,663 --> rest.ensembl --> 
+$ curl 'http://rest.ensembl.org/sequence/region/mus_musculus/2:26457903..26458003:1?' -H 'Content-type:text/x-fasta'
+
+Resultaat:
+>chromosome:GRCm38:2:26457903:26458003:1
+TTTAGCAAAATGTGGACAACCATCAGTATCATTTTTATTGCAAATTAGTTAACAAAAAAA
+GATGAAAAAAATACATCATTTTCATTACCTACAGTTTTGCA
